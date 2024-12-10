@@ -86,3 +86,5 @@ int main(int argc, char const *argv[])
     pcap_close(capdev);
     return 0;
 }
+
+// Outputs packet data correctly

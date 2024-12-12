@@ -51,7 +51,7 @@ void call_me(u_char *user, const struct pcap_pkthdr *pkthdr, const u_char *packe
 
     fprintf(logfile, "************************************"
                      "**************************************\n");
-    fprintf(logfile, "ID: %d | SRC: %s | DST: %s | TOS: 0x%x | TTL: %d\n", packet_id, packet_scrip,
+    fprintf(logfile, "ID: %d | SOURCE: %s | DESTINATION: %s | TOS: 0x%x | TIMETOLIVE: %d\n", packet_id, packet_scrip,
             packet_dstip, packet_tos, packet_ttl);
 
     packeted_ptr += (4 * packet_hlen);
@@ -68,7 +68,7 @@ void call_me(u_char *user, const struct pcap_pkthdr *pkthdr, const u_char *packe
         tcp_header = (struct tcphdr *)packeted_ptr;
         src_port = tcp_header->th_sport;
         dst_port = tcp_header->th_dport;
-        fprintf(logfile, "PROTO: TCP | FLAGS: %c/%c/%c | SPORT: %d | DPORT: %d |\n",
+        fprintf(logfile, "PROTOCOL: TCP | FLAGS: %c/%c/%c | SPORT: %d | DPORT: %d |\n",
                 (tcp_header->th_flags & TH_SYN ? 'S' : '-'),
                 (tcp_header->th_flags & TH_ACK ? 'A' : '-'),
                 (tcp_header->th_flags & TH_URG ? 'U' : '-'), src_port, dst_port);
@@ -78,13 +78,13 @@ void call_me(u_char *user, const struct pcap_pkthdr *pkthdr, const u_char *packe
         udp_header = (struct udphdr *)packeted_ptr;
         src_port = udp_header->uh_sport;
         dst_port = udp_header->uh_dport;
-        fprintf(logfile, "PROTO: UDP | SPORT: %d | DPORT: %d |\n", src_port, dst_port);
+        fprintf(logfile, "PROTOCOL: UDP | SPORT: %d | DPORT: %d |\n", src_port, dst_port);
         break;
     case IPPROTO_ICMP:
         icmp_header = (struct icmp *)packeted_ptr;
         int icmp_type = icmp_header->icmp_type;
         int icmp_type_code = icmp_header->icmp_code;
-        fprintf(logfile, "PROTO: ICMP | TYPE: %d | CODE: %d |\n", icmp_type, icmp_type_code);
+        fprintf(logfile, "PROTOCOL: ICMP | TYPE: %d | CODE: %d |\n", icmp_type, icmp_type_code);
         break;
     }
 }

@@ -13,7 +13,7 @@
 #include <netinet/ip.h>
 #include <netinet/ether.h>
 #include <netinet/ip_icmp.h>
-
+#include <cstring>
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>

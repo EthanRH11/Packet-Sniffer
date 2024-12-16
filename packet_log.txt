@@ -1,4 +1,5 @@
 **************************************************************************
+<<<<<<< HEAD
 ID: 40339 | SOURCE: 172.27.232.18 | DESTINATION: 52.168.117.169 | TOS: 0x0 | TIMETOLIVE: 64
 PROTOCOL: TCP | FLAGS: S/-/- | SPORT: 15556 | DPORT: 47873 |
 **************************************************************************
@@ -13,3 +14,16 @@ PROTOCOL: TCP | FLAGS: -/A/- | SPORT: 15556 | DPORT: 47873 |
 **************************************************************************
 ID: 61543 | SOURCE: 52.168.117.169 | DESTINATION: 172.27.232.18 | TOS: 0x0 | TIMETOLIVE: 108
 PROTOCOL: TCP | FLAGS: -/A/- | SPORT: 47873 | DPORT: 15556 |
+=======
+ID: 1540 | SOURCE: 19.150.172.27 | DESTINATION: 224.1.0.21 | TOS: 0x1 | TIMETOLIVE: 0
+**************************************************************************
+ID: 1540 | SOURCE: 29.20.172.27 | DESTINATION: 232.18.0.21 | TOS: 0x1 | TIMETOLIVE: 0
+**************************************************************************
+ID: 60929 | SOURCE: 172.27.232.18 | DESTINATION: 185.125.190.56 | TOS: 0xb8 | TIMETOLIVE: 64
+PROTOCOL: UDP | SPORT: 3310 | DPORT: 31488 |
+**************************************************************************
+ID: 5955 | SOURCE: 185.125.190.56 | DESTINATION: 172.27.232.18 | TOS: 0x0 | TIMETOLIVE: 54
+PROTOCOL: UDP | SPORT: 31488 | DPORT: 3310 |
+**************************************************************************
+ID: 1540 | SOURCE: 29.20.172.27 | DESTINATION: 232.18.0.0 | TOS: 0x1 | TIMETOLIVE: 0
+>>>>>>> 1d930f7 (Worked on setting up python parser to get data and add it to a sqlite data base in order to query the database and return common vulns within the scan result)
